@@ -11,7 +11,7 @@ This project contains a comprehensive automated test suite for the [Swift Transl
 ├── test-results/               # Test execution results
 ├── playwright.config.ts        # Playwright configuration
 ├── package.json                # Project dependencies
-├── IT23271814_Assignment1_TestCases.xlsx  # Test case specifications
+├── IT23152328_Assignment1_TestCases.xlsx  # Test case specifications
 └── README.md                   # This file
 ```
 
@@ -26,22 +26,6 @@ This project contains a comprehensive automated test suite for the [Swift Transl
 - Node.js (v14 or higher)
 - npm (comes with Node.js)
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/PrageeDG/ITPM-Assignment01.git
-   cd ITPM-Assignment01
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Install Playwright browsers:
-   ```bash
-   npx playwright install
-   ```
 
 ## Running Tests
 
