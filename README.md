@@ -136,5 +136,4 @@ ISC
 
 ## Repository
 
-- **GitHub**: https://github.com/PrageeDG/ITPM-Assignment01
-- **Issue Tracker**: https://github.com/PrageeDG/ITPM-Assignment01/issues
+- **GitHub**: https://github.com/myd9890/ITPM_ASSIGNMENT_-
