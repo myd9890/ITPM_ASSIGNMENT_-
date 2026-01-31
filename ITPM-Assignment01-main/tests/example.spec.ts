@@ -1,20 +1,33 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 const BASE_URL = 'https://www.swifttranslator.com/';
 
-async function waitForSinhalaToAppear(page) {
-  await page.waitForFunction(() => /[\u0D80-\u0DFF]/.test(document.body.innerText), null, {
-    timeout: 20000,
-  });
+interface WaitForFunctionOptions {
+  timeout: number;
 }
 
-async function waitForExpectedText(page, expected) {
+async function waitForSinhalaToAppear(page: Page): Promise<void> {
+  await page.waitForFunction(() => /[\u0D80-\u0DFF]/.test(document.body.innerText), null, {
+    timeout: 20000,
+  } as WaitForFunctionOptions);
+}
+
+interface WaitForExpectedTextOptions {
+  timeout: number;
+}
+
+async function waitForExpectedText(page: Page, expected: string): Promise<void> {
   await expect
-    .poll(async () => await page.textContent('body'), { timeout: 20000 })
+    .poll(async () => await page.textContent('body'), { timeout: 20000 } as WaitForExpectedTextOptions)
     .toContain(expected);
 }
 
-async function runTestWithStatus(testCaseName, fn) {
+interface TestFunction {
+  (): Promise<void>;
+}
+
+async function runTestWithStatus(testCaseName: string, fn: TestFunction): Promise<void> {
   try {
     await fn();
     console.log(`${testCaseName} | Status: Pass`);
